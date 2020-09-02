@@ -26,3 +26,8 @@ can use to execute commands before and after the tests had run.
     accidentally break it. 
     - Unit tests test the application from the inside, from the point of view of the programmer.
     - Unit tests should help you to write code that’s clean and bug free. 
+- The unit-test/code cycle
+    1. Run the unit tests in the terminal.
+    2. Make a minimal code change in the editor.
+    3. Repeat!
+
