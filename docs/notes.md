@@ -15,10 +15,14 @@ can use to execute commands before and after the tests had run.
 
 ## Terminologies and Concepts
 
-
 - Functional Test == Acceptance Test == End-to-End Test
 - User Story
     - A description of how the application will work from the point of view of the user. Used to structure a functional test.
 - Expected failure
     - When a test fails in the way that we expected it to.
-
+- Functional vs Unit Tests
+    - Functional tests test the application from the outside, from the point of view of the user.
+    - Functional tests should help you build an application with the right functionality, and guarantee you never 
+    accidentally break it. 
+    - Unit tests test the application from the inside, from the point of view of the programmer.
+    - Unit tests should help you to write code that’s clean and bug free. 
