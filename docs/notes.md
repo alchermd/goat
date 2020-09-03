@@ -15,7 +15,10 @@ can use to execute commands before and after the tests had run.
 
 ## Quick Tips
 
-- Big changes to a functional test are usually a good thing to commit on their own.
+- When to commit?
+    - Big changes to a functional test are usually a good thing to commit on their own.
+    - It’s a good idea to do a commit after any refactoring:
+- Unit tests are really about testing logic, flow control, and configuration. **Don't test constants**.
 
 ## Terminologies and Concepts
 
@@ -44,3 +47,7 @@ On the purpose of TDD:
 On writing test for trivial functions:
 
 > ...if they’re really trivial tests, then they won’t take you that long to write them. So stop moaning and just write them already.
+
+On refactoring:
+
+> When refactoring, work on either the code or the tests, but not both at once. 
