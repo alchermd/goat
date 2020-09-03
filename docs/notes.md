@@ -13,6 +13,10 @@ of our app.
 statements. A particular advantage is that the `unittest.TestCase` class has the `setUp` and `tearDown` methods that we
 can use to execute commands before and after the tests had run.
 
+## Quick Tips
+
+- Big changes to a functional test are usually a good thing to commit on their own.
+
 ## Terminologies and Concepts
 
 - Functional Test == Acceptance Test == End-to-End Test
@@ -31,3 +35,12 @@ can use to execute commands before and after the tests had run.
     2. Make a minimal code change in the editor.
     3. Repeat!
 
+## Quotables
+
+On the purpose of TDD:
+
+> Ultimately, programming is hard. Often, we are smart, so we succeed. TDD is there to help us out when we’re not so smart. 
+
+On writing test for trivial functions:
+
+> ...if they’re really trivial tests, then they won’t take you that long to write them. So stop moaning and just write them already.
