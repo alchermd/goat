@@ -37,6 +37,22 @@ can use to execute commands before and after the tests had run.
     1. Run the unit tests in the terminal.
     2. Make a minimal code change in the editor.
     3. Repeat!
+- The TDD Process:
+    1. We write a test. 
+    2. We run the test and see it fail. 
+    3. We write some minimal code to get it a little further. We rerun the test and repeat until it passes. 
+    4. Then, optionally, we might refactor our code, using our tests to make sure we don’t break anything.
+    
+![](assets/overall-tdd-process.png)
+
+- The TDD Process with Functional and Unit Tests:
+    1. We write a functional test and see it fail.
+    2. Then, the process of "writing code" to get it to pass is a mini-TDD cycle of its own: 
+        - We write one or more unit tests, and go into the unit-test/code cycle until the unit tests pass. 
+    3. Then, we go back to our FT to check that it gets a little further
+    4. We can write a bit more of our application -- using more unit tests, and so on.
+    
+![](assets/tdd-process-with-functional-and-unit-tests.png)
 
 ## Quotables
 
