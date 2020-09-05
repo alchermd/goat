@@ -89,3 +89,9 @@ On DRY (Don't Repeat Yourself):
 
 > You can copy and paste code once, and it may be premature to try to remove the duplication it causes, but once you 
 get three occurrences, it’s time to remove duplication.
+
+On "Unit Tests Versus Integrated Tests, and the Database"
+
+> It’s OK to ignore this distinction for now—​we have two types of test, the high-level functional tests which test 
+the application from the user’s point of view, and these lower-level tests which test it from the programmer’s point of
+view.
