@@ -42,12 +42,20 @@ class NewVisitorTest(unittest.TestCase):
         self.assertIn("1. Buy watercolor paint", [row.text for row in rows])
 
         # There is still a text box inviting her to add another item. She enters "Add water to the watercolor paint".
-        self.fail("Finish the test!")
+        inputbox = self.browser.find_element_by_id("new_item")
+        inputbox.send_keys("Add water to the watercolor paint")
+        inputbox.send_keys(Keys.ENTER)
+        time.sleep(1)
 
         # The page updates again, and now shows both items on her list.
+        table = self.browser.find_element_by_id("list_table")
+        rows = table.find_elements_by_tag_name("tr")
+        self.assertIn("1. Buy watercolor paint", [row.text for row in rows])
+        self.assertIn("2. Add water to the watercolor paint", [row.text for row in rows])
 
         # Micah wonders whether the site will remember her list. Then she sees that the site has generated a unique URL for
         # her -- there is some explanatory text to that effect.
+        self.fail("Finish the test!")
 
         # She visits that URL -- her to-do list is still there.
 

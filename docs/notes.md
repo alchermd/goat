@@ -54,6 +54,13 @@ can use to execute commands before and after the tests had run.
     
 ![](assets/tdd-process-with-functional-and-unit-tests.png)
 
+- Red/Green/Refactor and Triangulation
+    - Start by writing a unit test which fails (Red).
+    - Write the simplest possible code to get it to pass (Green), even if that means cheating.
+    - Refactor to get to better code that makes more sense.
+
+
+
 ## Quotables
 
 On the purpose of TDD:
@@ -67,3 +74,18 @@ On writing test for trivial functions:
 On refactoring:
 
 > When refactoring, work on either the code or the tests, but not both at once. 
+
+On when to refactor:
+
+> One methodology is eliminate duplication: if your test uses a magic constant, and your application code also uses it, 
+that counts as duplication, so it justifies refactoring. 
+
+If that still is too vauge:
+
+> ... use Triangulation: if your tests let you get away with writing "cheating" code that you’re not happy with, like 
+returning a magic constant, write another test that forces you to write some better code. 
+
+On DRY (Don't Repeat Yourself):
+
+> You can copy and paste code once, and it may be premature to try to remove the duplication it causes, but once you 
+get three occurrences, it’s time to remove duplication.
