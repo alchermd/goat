@@ -42,7 +42,9 @@ can use to execute commands before and after the tests had run.
     2. We run the test and see it fail. 
     3. We write some minimal code to get it a little further. We rerun the test and repeat until it passes. 
     4. Then, optionally, we might refactor our code, using our tests to make sure we don’t break anything.
-    
+- Regression
+    - When new code breaks some aspect of the application which used to work.
+
 ![](assets/overall-tdd-process.png)
 
 - The TDD Process with Functional and Unit Tests:
@@ -60,6 +62,10 @@ can use to execute commands before and after the tests had run.
     - Refactor to get to better code that makes more sense.
 
 
+## Code Smells
+
+- A long unit test either needs to be broken into two, or it may be an indication that the thing you’re testing is 
+too complicated.
 
 ## Quotables
 
