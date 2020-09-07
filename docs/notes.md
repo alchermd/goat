@@ -71,6 +71,17 @@ very least, it integrates the FTs onto the Django test runner so we can run the 
 - A long unit test either needs to be broken into two, or it may be an indication that the thing you’re testing is 
 too complicated.
 
+## Testing Best Practices
+
+- Ensure test isolation and manage global state
+    - Different tests shouldn't affect one another.
+    - Using `django.test.TestCase` and `django.test.LiveServerTestCase` helps with this
+- Avoid "voodoo" sleeps
+    - Hard coded `time.sleep()`s are not consistent enough considering different variables (device hanging, slow 
+    connection, etc.) might affect the test results
+    - Selenium has provided implicit waits, but the implementation varies across different browsers.  "Explicit is 
+    better than implict", as the Zen of Python says!
+
 ## Quotables
 
 On the purpose of TDD:
