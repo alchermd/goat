@@ -12,6 +12,10 @@ of our app.
 - The `unittest` module provides a nicer interface on writing test cases, a much better upgrade than just using `assert`
 statements. A particular advantage is that the `unittest.TestCase` class has the `setUp` and `tearDown` methods that we
 can use to execute commands before and after the tests had run.
+- Django provides a `LiveServerTestCase` class that gives some additionall functionalities for functional tests. At the
+very least, it integrates the FTs onto the Django test runner so we can run the whole test suite with a single 
+`python manage.py test` command
+
 
 ## Quick Tips
 
