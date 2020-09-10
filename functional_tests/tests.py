@@ -64,7 +64,6 @@ class NewVisitorTest(LiveServerTestCase):
 
         # Micah wonders whether the site will remember her list. Then she sees that the site has generated a unique URL for
         # her -- there is some explanatory text to that effect.
-        self.fail("Finish the test!")
 
         # She visits that URL -- her to-do list is still there.
 
@@ -105,7 +104,7 @@ class NewVisitorTest(LiveServerTestCase):
         self.assertNotEqual(alcher_list_url, micah_list_url)
 
         # Again, there is no trace of Micah's list.
-        page_text = self.browser.find_elements_by_tag_name('body').text
+        page_text = self.browser.find_element_by_tag_name('body').text
         self.assertNotIn('Buy watercolor paint', page_text)
         self.assertIn('Buy milk', page_text)
 
