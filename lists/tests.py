@@ -2,7 +2,7 @@ from django.http import HttpRequest
 from django.test import TestCase
 from django.urls import resolve
 
-from .models import Item
+from .models import Item, List
 from .views import home_page
 
 
@@ -25,17 +25,25 @@ class ListViewTest(TestCase):
         self.assertContains(response, "itemey 1")
         self.assertContains(response, "itemey 2")
 
-class ItemModelTest(TestCase):
+class ListAndItemModelTest(TestCase):
     def test_saving_and_retrieving_items(self):
-        first_item = Item.objects.create(text="The first (ever) list item")
-        second_item = Item.objects.create(text="Item the second")
+        _list = List()
+        _list.save()
+
+        first_item = Item.objects.create(text="The first (ever) list item", list=_list)
+        second_item = Item.objects.create(text="Item the second", list=_list)
+
+        saved_list = List.objects.first()
+        self.assertEqual(saved_list, _list)
 
         saved_items = Item.objects.all()
         self.assertEquals(saved_items.count(), 2)
 
         first_saved_item, second_saved_item = saved_items
         self.assertEquals(first_saved_item.text, first_item.text)
+        self.assertEquals(first_saved_item.list, _list)
         self.assertEquals(second_saved_item.text, second_item.text)
+        self.assertEquals(second_saved_item.list, _list)
 
 
 class NewListTest(TestCase):
