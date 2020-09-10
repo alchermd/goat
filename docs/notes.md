@@ -113,6 +113,21 @@ get three occurrences, it’s time to remove duplication.
 
 On "Unit Tests Versus Integrated Tests, and the Database"
 
-> It’s OK to ignore this distinction for now—​we have two types of test, the high-level functional tests which test 
+> It’s OK to ignore this distinction for now—we have two types of test, the high-level functional tests which test 
 the application from the user’s point of view, and these lower-level tests which test it from the programmer’s point of
 view.
+
+On Working State to Working State:
+
+> Our natural urge is often to dive in and fix everything at once… but if we’re not careful, we’ll end up [...] 
+in a situation with loads of changes to our code and nothing working.
+
+On splitting work out into small, achievable tasks 
+
+> Sometimes this means starting with "boring" work rather than diving straight in with the fun stuff, but you’ll have 
+to trust that YOLO-you in the parallel universe is probably having a bad time, having broken everything, and struggling
+to get the app working again.
+
+On YAGNI:
+
+> Avoid the temptation to write code that you think might be useful, just because it suggests itself at the time. 
