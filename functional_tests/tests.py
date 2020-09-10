@@ -90,7 +90,7 @@ class NewVisitorTest(LiveServerTestCase):
 
         # Alcher visits the home page. There is no sign of Micah's list.
         self.browser.get(self.live_server_url)
-        page_text = self.browser.find_elements_by_tag_name('body').text
+        page_text = self.browser.find_element_by_tag_name('body').text
         self.assertNotIn('Buy watercolor paint', page_text)
 
         # Alcher starts a new list by enter a new item. He is less interesting than Micah...
