@@ -3,5 +3,6 @@ from lists import views
 
 urlpatterns = [
     path('', views.home_page),
-    path('lists/the-only-list-in-the-world/', views.view_list, name='view_list')
+    path('lists/', views.list_list, name='list_list'),
+    path('lists/the-only-list-in-the-world/', views.list_detail, name='list_detail'),
 ]

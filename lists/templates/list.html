@@ -2,7 +2,7 @@
 <title>To Do Lists</title>
 <h1>To Do</h1>
 
-<form action="/" method="POST">
+<form action="/lists/" method="POST">
     {% csrf_token %}
     <input type="text" id="new_item" name="item_text" placeholder="Enter a to-do item">
 </form>
