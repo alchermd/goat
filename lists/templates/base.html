@@ -1,17 +1,35 @@
 <html>
 <head>
-
     <title>To Do Lists</title>
+
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.css">
 </head>
 <body>
-<h1>{% block header_text %}{% endblock %}</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3 jumbotron">
+            <div class="text-center">
+                <h1 class="mb-4">{% block header_text %}{% endblock %}</h1>
 
-<form action="{% block form_action %}{% endblock %}" method="POST">
-    {% csrf_token %}
-    <input type="text" id="new_item" name="item_text" placeholder="Enter a to-do item">
-</form>
+                <form action="{% block form_action %}{% endblock %}" method="POST">
+                    {% csrf_token %}
+                    <input type="text"
+                           class="form-control input-lg"
+                           id="new_item"
+                           name="item_text"
+                           placeholder="Enter a to-do item">
+                </form>
+            </div>
+        </div>
+    </div>
 
-{% block table %}
-{% endblock %}
+
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            {% block table %}
+            {% endblock %}
+        </div>
+    </div>
+</div>
 </body>
 </html>
