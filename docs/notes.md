@@ -81,6 +81,8 @@ too complicated.
     connection, etc.) might affect the test results
     - Selenium has provided implicit waits, but the implementation varies across different browsers.  "Explicit is 
     better than implict", as the Zen of Python says!
+- Styling shouldn't be tested, because that's essentialy the same as testing a constant.
+    - Test the implementation instead (i.e. if the CSS files are loaded correctly)
 
 ## Quotables
 
@@ -131,3 +133,7 @@ to get the app working again.
 On YAGNI:
 
 > Avoid the temptation to write code that you think might be useful, just because it suggests itself at the time. 
+
+On real developers:
+
+> Real developers ship
