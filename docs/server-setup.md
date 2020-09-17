@@ -66,6 +66,8 @@ $ sudo systemctl start nginx
 $ sudo ufw allow 80
 ```
 
+### Setup
+
 Create basic Nginx config as `/etc/nginx/sites-available/staging.<your_domain>:
 
 ```
@@ -79,6 +81,7 @@ server {
     
     location / {
         proxy_pass http://unix:/tmp/staging.<your_domain>.socket;
+        proxy_set_header Host $host;
     }
 }
 ```
@@ -91,6 +94,34 @@ $ cd /etc/nginx/sites-enabled/
 $ sudo ln -s /etc/nginx/sites-available/$SITENAME $SITENAME
 $ sudo rm /etc/nginx/sites-enabled/default
 $ sudo systemctl reload nginx
+```
+
+Systemd config on `/etc/systemd/system/gunicorn-staging.<your_domain>.service`:
+
+```
+[Unit]
+Description=Gunicorn server for staging.<your_domain>
+
+[Service]
+Restart=on-failure  
+User=alchermd  
+WorkingDirectory=/home/<your_user>/sites/staging.<your_domain>  
+EnvironmentFile=/home/<your_user>/sites/staging.<your_domain>/.env  
+
+ExecStart=/home/<your_user>/sites/staging.<your_domain>/venv/bin/gunicorn \
+    --bind unix:/tmp/staging.<your_domain>.socket \
+    goat.wsgi:application  
+
+[Install]
+WantedBy=multi-user.target
+```
+
+...then load the new systemd config file
+
+```bash
+$ sudo systemctl daemon-reload
+$ sudo systemctl enable gunicorn-staging.<your_domain>.service
+$ sudo systemctl start gunicorn-staging.<your_domain>.service
 ```
 
 Setup static files
